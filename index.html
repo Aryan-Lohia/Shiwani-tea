@@ -355,9 +355,93 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
 
 /* 3-blend range: Gold spans full width on mobile */
 @media(max-width:899px){.bento .tile.t-gold{grid-column:1/-1;min-height:340px}.bento .tile.t-gold img{height:70%}}
+
+.contact-list span>a[href^="tel:"]:not(.mini){font-size:18px;text-decoration:none}
+.cl-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.contact-list .mini{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 14px;border-radius:999px;background:rgba(243,222,154,.14);border:1px solid rgba(243,222,154,.35);color:#fff;text-decoration:none;font-size:14px;font-weight:800}
+.contact-list .mini svg{width:16px;height:16px;margin:0;color:var(--gold-hi)}
+.contact-list .mini.wa{background:linear-gradient(180deg,#2BD366,#16A34A);border-color:transparent}
+.contact-list .mini.wa svg{color:#fff}
+.foot-contact{display:flex;flex-wrap:wrap;gap:10px 22px;margin:18px 0 0}
+.foot-contact a{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;text-decoration:none}
+.foot-contact svg{width:18px;height:18px;color:var(--gold-hi)}
 </style>
 </head>
 <body>
+<style>
+#preloader{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#FBEBCB;
+  background:radial-gradient(70% 55% at 50% 42%,rgba(201,162,78,.38) 0%,rgba(201,162,78,0) 60%),radial-gradient(120% 90% at 50% 40%,#0E5A2A 0%,#07351A 55%,#041F10 100%);
+  transition:opacity .6s ease,visibility .6s ease;animation:plFailsafe .6s ease 4.6s forwards}
+#preloader.done{opacity:0;visibility:hidden;pointer-events:none}
+@keyframes plFailsafe{to{opacity:0;visibility:hidden;pointer-events:none}}
+#preloader svg.pl-cup{width:min(190px,48vw);height:auto;overflow:visible}
+.pl-liquid{animation:plFill 2.6s cubic-bezier(.45,.05,.3,1) infinite}
+@keyframes plFill{0%{transform:translateY(120px);opacity:1}70%,90%{transform:translateY(8px);opacity:1}100%{transform:translateY(8px);opacity:0}}
+.pl-wave{animation:plWave 1.6s linear infinite}
+@keyframes plWave{to{transform:translateX(-60px)}}
+.pl-steam path{fill:none;stroke:rgba(251,235,203,.85);stroke-width:4;stroke-linecap:round;stroke-dasharray:28 120;stroke-dashoffset:148;animation:plSteam 2.4s ease-in-out infinite}
+.pl-steam path:nth-child(2){animation-delay:.8s}.pl-steam path:nth-child(3){animation-delay:1.6s}
+@keyframes plSteam{0%{stroke-dashoffset:148;opacity:0}25%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+.pl-leaf{animation:plLeaf 2.6s ease-in infinite;transform-origin:100px 0;transform-box:view-box}
+@keyframes plLeaf{0%{transform:translate(18px,-30px) rotate(-30deg);opacity:0}15%{opacity:1}55%{transform:translate(0,62px) rotate(40deg);opacity:1}62%,100%{transform:translate(0,72px) rotate(50deg);opacity:0}}
+.pl-text{position:relative;display:grid;margin:6px 0 0;font-family:'Great Vibes','Allura',cursive;font-size:clamp(30px,8vw,40px);line-height:1.1;color:#F3DE9A;min-height:1.2em;text-align:center}
+.pl-text span{grid-area:1/1;opacity:0;animation:plSwap 4s ease-in-out infinite}
+.pl-text span:nth-child(2){animation-delay:2s}
+@keyframes plSwap{0%{opacity:0;transform:translateY(8px)}12%,45%{opacity:1;transform:none}55%,100%{opacity:0;transform:translateY(-8px)}}
+.pl-cap{font-family:'Manrope',system-ui,sans-serif;font-weight:800;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(251,235,203,.75)}
+.pl-dots{display:flex;gap:6px;margin-top:4px}
+.pl-dots i{width:6px;height:6px;border-radius:50%;background:#C9A24E;animation:plDot 1.2s ease-in-out infinite}
+.pl-dots i:nth-child(2){animation-delay:.15s}.pl-dots i:nth-child(3){animation-delay:.3s}
+@keyframes plDot{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-5px);opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  #preloader{transition:opacity .15s linear,visibility .15s linear}
+  .pl-liquid,.pl-wave,.pl-steam path,.pl-leaf,.pl-text span,.pl-dots i{animation:none!important}
+  #preloader{animation:plFailsafe .15s linear 2s forwards!important}
+  .pl-liquid{transform:translateY(30px)}
+  .pl-leaf{opacity:0}
+  .pl-steam path{stroke-dashoffset:0;opacity:.6}
+  .pl-text span:first-child{opacity:1}
+}
+</style>
+<noscript><style>#preloader{display:none}</style></noscript>
+<div id="preloader" role="status" aria-live="polite" aria-busy="true">
+  <span class="sr-only">Loading Shiwani Tea…</span>
+  <svg class="pl-cup" viewBox="0 0 200 220" aria-hidden="true">
+    <defs>
+      <clipPath id="plClip"><path d="M59 64 L141 64 L133 182 Q132 190 124 190 L76 190 Q68 190 67 182 Z"/></clipPath>
+      <linearGradient id="plChai" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8A066"/><stop offset="1" stop-color="#8A4F26"/></linearGradient>
+      <linearGradient id="plGlass" x1="0" x2="1"><stop offset="0" stop-color="rgba(255,255,255,.22)"/><stop offset=".25" stop-color="rgba(255,255,255,.05)"/><stop offset=".8" stop-color="rgba(255,255,255,.03)"/><stop offset="1" stop-color="rgba(255,255,255,.18)"/></linearGradient>
+    </defs>
+    <g class="pl-steam"><path d="M82 52c-10-12 10-18 0-30s8-16 2-24"/><path d="M100 52c-10-12 10-18 0-30s8-16 2-24"/><path d="M118 52c-10-12 10-18 0-30s8-16 2-24"/></g>
+    <ellipse cx="100" cy="204" rx="62" ry="8" fill="rgba(0,0,0,.35)"/>
+    <ellipse cx="100" cy="196" rx="70" ry="9" fill="#C9A24E" opacity=".9"/><ellipse cx="100" cy="194" rx="70" ry="8" fill="#F3DE9A" opacity=".35"/>
+    <path d="M141 86 C176 84 180 152 134 160" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M55 60 L145 60 L136 184 Q135 194 125 194 L75 194 Q65 194 64 184 Z" fill="url(#plGlass)"/>
+    <g clip-path="url(#plClip)">
+      <g class="pl-liquid">
+        <g class="pl-wave">
+          <path d="M30 66 q15 -7 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 V260 H30 Z" fill="url(#plChai)"/>
+          <path d="M30 66 q15 -7 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 v7 q-15 6 -30 0 t-30 0 t-30 0 t-30 0 t-30 0 t-30 0 t-30 0 Z" fill="#EBCFA6" opacity=".9"/>
+        </g>
+      </g>
+    </g>
+    <g class="pl-leaf"><path d="M100 0 c10 6 12 18 4 26 c-2 2-4 3-4 3 s-2-1-4-3 c-8-8-6-20 4-26z" fill="#3F8F3A"/><path d="M100 3 v24" stroke="#F3DE9A" stroke-width="1.2"/></g>
+    <path d="M55 60 L145 60 L136 184 Q135 194 125 194 L75 194 Q65 194 64 184 Z" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="3"/>
+    <ellipse cx="100" cy="60" rx="45" ry="5" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2.5"/>
+    <path d="M66 76 L72 176" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round"/>
+    <g transform="translate(100 138)" fill="none" stroke="#F3DE9A" stroke-width="2.2">
+      <circle r="17"/>
+      <path d="M0 4 V-11" /><path d="M0 -12 c4 2 4 8 0 10 c-4-2-4-8 0-10z" fill="#F3DE9A"/>
+      <path d="M0 -2 c-3-6-9-6-11-3 c3 4 8 4 11 3z" fill="#F3DE9A" stroke-width="1"/><path d="M0 -2 c3-6 9-6 11-3 c-3 4-8 4-11 3z" fill="#F3DE9A" stroke-width="1"/>
+      <path d="M-15 8 q15 -9 30 0 M-13 12 q13 -7 26 0" stroke-width="1.8"/>
+    </g>
+  </svg>
+  <p class="pl-text" aria-hidden="true"><span>Sipping tea…</span><span>Brewing your cup…</span></p>
+  <span class="pl-cap" aria-hidden="true">Shiwani Tea</span>
+  <span class="pl-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+</div>
+<script>window.__plStart=Date.now();</script>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 6.9L3.2 29l6.5-1.7c1.9 1 4.1 1.6 6.3 1.6 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.6 16 26.6zm6-7.9c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></symbol>
  <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="currentColor" d="M20 3S9 2 5.5 8.5C3 13 5 17 5 17l-2 3 1.5 1 2-3s4 2 8.5-.5C21.5 14 21 3 20 3zm-5.2 10.6c-2.5 1.4-5 1.2-6.4.8 2-3.3 5-6 8.6-7.7-3.9 1.2-7 3.6-9.2 6.7-.4-1.5-.5-3.6.8-5.8C11 4.4 17 4.6 18.9 4.9c.3 1.9.4 7.3-4.1 8.7z"/></symbol>
@@ -368,6 +452,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
  <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/></g><circle cx="12" cy="12" r="1.8" fill="currentColor"/></symbol>
  <symbol id="i-blend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="10" r="6"/><circle cx="15" cy="10" r="6"/><circle cx="12" cy="15" r="6"/></g></symbol>
  <symbol id="i-pack" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 3h12l1 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7zM5 7h14M9 12h6"/></symbol>
+ <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 5h18v14H3zM3 6l9 7 9-7"/></symbol>
  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></symbol>
  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
@@ -384,7 +469,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
     <ul class="nav-links">
       <li><a href="#gold">Gold</a></li><li><a href="#premium">Premium</a></li><li><a href="#elaichi">Elaichi</a></li><li><a href="#formats">Formats</a></li><li><a href="#story">Story</a></li><li><a href="#enquire">Contact</a></li>
     </ul>
-    <a class="btn btn-wa" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire<span class="long">on WhatsApp</span></a>
+    <a class="btn btn-wa" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire<span class="long">on WhatsApp</span></a>
   </div>
 </header>
 <nav class="switch" id="switch" aria-label="Jump to a blend">
@@ -404,7 +489,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
       <h1 id="h-hero" class="reveal d1">Taste the <span class="script">Serenity</span></h1>
       <p class="lede reveal d2">Strong, aromatic CTC chai patti in three blends: Gold, Premium and Elaichi Chai. Packed in Siliguri, at the foot of the Darjeeling hills.</p>
       <div class="cta reveal d3">
-        <a class="btn btn-wa" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
+        <a class="btn btn-wa" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
         <a class="btn btn-ghost" href="#range">Explore the range<svg><use href="#i-arrow"/></svg></a>
       </div>
       <ul class="chips reveal d3">
@@ -452,7 +537,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
       </ul>
       <div class="meta reveal d3"><span class="pill">1Kg pouch</span><span>Product of India</span><span>100% Veg</span></div>
       <div class="cta reveal d3">
-        <a class="btn btn-dark" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="gold" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
+        <a class="btn btn-dark" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="gold" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
         <span class="price-note">Enquire for price</span>
       </div>
     </div>
@@ -482,7 +567,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
       </ul>
       <div class="meta reveal d3"><span class="pill">1Kg pouch</span><span>Product of India</span><span>100% Veg</span></div>
       <div class="cta reveal d3">
-        <a class="btn btn-wa" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Premium%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="premium" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
+        <a class="btn btn-wa" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Premium%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="premium" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
         <span class="price-note">Enquire for price</span>
       </div>
     </div>
@@ -511,7 +596,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
       </div>
       <div class="meta reveal d3" style="color:#fff"><span class="pill">1Kg pouch</span><span>Product of India</span><span>100% Veg</span></div>
       <div class="cta reveal d3">
-        <a class="btn btn-wa" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Elaichi%20Chai%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="elaichi" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
+        <a class="btn btn-wa" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Elaichi%20Chai%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="elaichi" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
         <span class="price-note" style="color:#fff">Enquire for price</span>
       </div>
     </div>
@@ -530,7 +615,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
       <button role="tab" data-k="elaichi" aria-selected="false" aria-controls="fmt-elaichi" id="tab-elaichi" tabindex="-1">Elaichi</button>
     </div>
     <div class="fmt-panel on" id="fmt-gold" data-k="gold" role="tabpanel" aria-labelledby="tab-gold">
-<div class="fmt-row"><div class="fmt"><div class="art"><img src="assets/pouch-gold.webp" alt="Shiwani Tea Gold pouch" loading="lazy"></div><div class="txt"><b>1Kg Pouch</b><small>Current pack</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="gold" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 220 300" role="img" aria-label="Shiwani Tea Gold jar design preview"><defs>
+<div class="fmt-row"><div class="fmt"><div class="art"><img src="assets/pouch-gold.webp" alt="Shiwani Tea Gold pouch" loading="lazy"></div><div class="txt"><b>1Kg Pouch</b><small>Current pack</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="gold" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 220 300" role="img" aria-label="Shiwani Tea Gold jar design preview"><defs>
 <linearGradient id="jgoldl" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#B48A35"/><stop offset="1" stop-color="#7A5B22"/></linearGradient>
 <linearGradient id="jgoldb" x1="0" x2="1"><stop offset="0" stop-color="#7A5B22"/><stop offset=".45" stop-color="#F6DF94"/><stop offset="1" stop-color="#B48A35"/></linearGradient>
 <linearGradient id="jgoldg" x1="0" x2="1"><stop offset="0" stop-color="#1b0d06"/><stop offset=".5" stop-color="#4a2a17"/><stop offset="1" stop-color="#1b0d06"/></linearGradient>
@@ -548,7 +633,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
 <text x="110" y="226" text-anchor="middle" font-family="Fraunces, serif" font-weight="800" font-size="20" fill="#0A3F1E">Gold</text>
 <path d="M44 86 q-6 90 0 186" stroke="rgba(255,255,255,.45)" stroke-width="9" fill="none" stroke-linecap="round"/>
 <path d="M62 84 q-3 30 0 30" stroke="rgba(255,255,255,.3)" stroke-width="5" fill="none" stroke-linecap="round"/>
-</svg></div><div class="txt"><b>Jar</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%20jar.%20Please%20share%20the%20price%20and%20availability." data-wa="gold" data-f="jar" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 180 260" role="img" aria-label="Shiwani Tea Gold sachet design preview"><defs>
+</svg></div><div class="txt"><b>Jar</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%20jar.%20Please%20share%20the%20price%20and%20availability." data-wa="gold" data-f="jar" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 180 260" role="img" aria-label="Shiwani Tea Gold sachet design preview"><defs>
 <linearGradient id="sgoldb" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#F6DF94"/><stop offset=".55" stop-color="#B48A35"/><stop offset="1" stop-color="#7A5B22"/></linearGradient>
 <linearGradient id="sgolds" x1="0" x2="1"><stop offset="0" stop-color="rgba(0,0,0,.25)"/><stop offset=".18" stop-color="rgba(255,255,255,.35)"/><stop offset=".3" stop-color="rgba(255,255,255,0)"/><stop offset=".85" stop-color="rgba(0,0,0,0)"/><stop offset="1" stop-color="rgba(0,0,0,.3)"/></linearGradient></defs>
 <ellipse cx="90" cy="252" rx="66" ry="6" fill="rgba(0,0,0,.22)"/>
@@ -558,9 +643,9 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
 <image href="assets/logo-green.png" x="38" y="66" width="104" height="82"/>
 <text x="90" y="180" text-anchor="middle" font-family="Fraunces, serif" font-weight="800" font-size="19" fill="#0A3F1E">Gold</text>
 <rect x="60" y="192" width="60" height="3" rx="1.5" fill="#0E5A2A"/>
-</svg></div><div class="txt"><b>Sachets</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%20sachets.%20Please%20share%20the%20price%20and%20availability." data-wa="gold" data-f="sachet" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div></div></div>
+</svg></div><div class="txt"><b>Sachets</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%20sachets.%20Please%20share%20the%20price%20and%20availability." data-wa="gold" data-f="sachet" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div></div></div>
 <div class="fmt-panel" id="fmt-premium" data-k="premium" role="tabpanel" aria-labelledby="tab-premium">
-<div class="fmt-row"><div class="fmt"><div class="art"><img src="assets/pouch-premium.webp" alt="Shiwani Tea Premium pouch" loading="lazy"></div><div class="txt"><b>1Kg Pouch</b><small>Current pack</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Premium%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="premium" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 220 300" role="img" aria-label="Shiwani Tea Premium jar design preview"><defs>
+<div class="fmt-row"><div class="fmt"><div class="art"><img src="assets/pouch-premium.webp" alt="Shiwani Tea Premium pouch" loading="lazy"></div><div class="txt"><b>1Kg Pouch</b><small>Current pack</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Premium%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="premium" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 220 300" role="img" aria-label="Shiwani Tea Premium jar design preview"><defs>
 <linearGradient id="jpremiuml" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1466B8"/><stop offset="1" stop-color="#0A3C7A"/></linearGradient>
 <linearGradient id="jpremiumb" x1="0" x2="1"><stop offset="0" stop-color="#0A3C7A"/><stop offset=".45" stop-color="#3E93E6"/><stop offset="1" stop-color="#1466B8"/></linearGradient>
 <linearGradient id="jpremiumg" x1="0" x2="1"><stop offset="0" stop-color="#1b0d06"/><stop offset=".5" stop-color="#4a2a17"/><stop offset="1" stop-color="#1b0d06"/></linearGradient>
@@ -578,7 +663,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
 <text x="110" y="226" text-anchor="middle" font-family="Fraunces, serif" font-weight="800" font-size="20" fill="#FFFFFF">Premium</text>
 <path d="M44 86 q-6 90 0 186" stroke="rgba(255,255,255,.45)" stroke-width="9" fill="none" stroke-linecap="round"/>
 <path d="M62 84 q-3 30 0 30" stroke="rgba(255,255,255,.3)" stroke-width="5" fill="none" stroke-linecap="round"/>
-</svg></div><div class="txt"><b>Jar</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Premium%20%E2%80%93%20jar.%20Please%20share%20the%20price%20and%20availability." data-wa="premium" data-f="jar" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 180 260" role="img" aria-label="Shiwani Tea Premium sachet design preview"><defs>
+</svg></div><div class="txt"><b>Jar</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Premium%20%E2%80%93%20jar.%20Please%20share%20the%20price%20and%20availability." data-wa="premium" data-f="jar" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 180 260" role="img" aria-label="Shiwani Tea Premium sachet design preview"><defs>
 <linearGradient id="spremiumb" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#3E93E6"/><stop offset=".55" stop-color="#1466B8"/><stop offset="1" stop-color="#0A3C7A"/></linearGradient>
 <linearGradient id="spremiums" x1="0" x2="1"><stop offset="0" stop-color="rgba(0,0,0,.25)"/><stop offset=".18" stop-color="rgba(255,255,255,.35)"/><stop offset=".3" stop-color="rgba(255,255,255,0)"/><stop offset=".85" stop-color="rgba(0,0,0,0)"/><stop offset="1" stop-color="rgba(0,0,0,.3)"/></linearGradient></defs>
 <ellipse cx="90" cy="252" rx="66" ry="6" fill="rgba(0,0,0,.22)"/>
@@ -588,9 +673,9 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
 <image href="assets/logo-white.png" x="38" y="66" width="104" height="82"/>
 <text x="90" y="180" text-anchor="middle" font-family="Fraunces, serif" font-weight="800" font-size="19" fill="#FFFFFF">Premium</text>
 <rect x="60" y="192" width="60" height="3" rx="1.5" fill="#F3D58A"/>
-</svg></div><div class="txt"><b>Sachets</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Premium%20%E2%80%93%20sachets.%20Please%20share%20the%20price%20and%20availability." data-wa="premium" data-f="sachet" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div></div></div>
+</svg></div><div class="txt"><b>Sachets</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Premium%20%E2%80%93%20sachets.%20Please%20share%20the%20price%20and%20availability." data-wa="premium" data-f="sachet" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div></div></div>
 <div class="fmt-panel" id="fmt-elaichi" data-k="elaichi" role="tabpanel" aria-labelledby="tab-elaichi">
-<div class="fmt-row"><div class="fmt"><div class="art"><img src="assets/pouch-elaichi.webp" alt="Shiwani Tea Elaichi Chai pouch" loading="lazy"></div><div class="txt"><b>1Kg Pouch</b><small>Current pack</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Elaichi%20Chai%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="elaichi" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 220 300" role="img" aria-label="Shiwani Tea Elaichi Chai jar design preview"><defs>
+<div class="fmt-row"><div class="fmt"><div class="art"><img src="assets/pouch-elaichi.webp" alt="Shiwani Tea Elaichi Chai pouch" loading="lazy"></div><div class="txt"><b>1Kg Pouch</b><small>Current pack</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Elaichi%20Chai%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." data-wa="elaichi" data-f="pouch" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 220 300" role="img" aria-label="Shiwani Tea Elaichi Chai jar design preview"><defs>
 <linearGradient id="jelaichil" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#C3CF34"/><stop offset="1" stop-color="#2E7A2A"/></linearGradient>
 <linearGradient id="jelaichib" x1="0" x2="1"><stop offset="0" stop-color="#2E7A2A"/><stop offset=".45" stop-color="#EEF27A"/><stop offset="1" stop-color="#C3CF34"/></linearGradient>
 <linearGradient id="jelaichig" x1="0" x2="1"><stop offset="0" stop-color="#1b0d06"/><stop offset=".5" stop-color="#4a2a17"/><stop offset="1" stop-color="#1b0d06"/></linearGradient>
@@ -608,7 +693,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
 <text x="110" y="226" text-anchor="middle" font-family="Fraunces, serif" font-weight="800" font-size="16" fill="#0A3F1E">Elaichi Chai</text>
 <path d="M44 86 q-6 90 0 186" stroke="rgba(255,255,255,.45)" stroke-width="9" fill="none" stroke-linecap="round"/>
 <path d="M62 84 q-3 30 0 30" stroke="rgba(255,255,255,.3)" stroke-width="5" fill="none" stroke-linecap="round"/>
-</svg></div><div class="txt"><b>Jar</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Elaichi%20Chai%20%E2%80%93%20jar.%20Please%20share%20the%20price%20and%20availability." data-wa="elaichi" data-f="jar" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 180 260" role="img" aria-label="Shiwani Tea Elaichi Chai sachet design preview"><defs>
+</svg></div><div class="txt"><b>Jar</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Elaichi%20Chai%20%E2%80%93%20jar.%20Please%20share%20the%20price%20and%20availability." data-wa="elaichi" data-f="jar" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div><div class="fmt"><div class="art"><svg viewBox="0 0 180 260" role="img" aria-label="Shiwani Tea Elaichi Chai sachet design preview"><defs>
 <linearGradient id="selaichib" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#EEF27A"/><stop offset=".55" stop-color="#C3CF34"/><stop offset="1" stop-color="#2E7A2A"/></linearGradient>
 <linearGradient id="selaichis" x1="0" x2="1"><stop offset="0" stop-color="rgba(0,0,0,.25)"/><stop offset=".18" stop-color="rgba(255,255,255,.35)"/><stop offset=".3" stop-color="rgba(255,255,255,0)"/><stop offset=".85" stop-color="rgba(0,0,0,0)"/><stop offset="1" stop-color="rgba(0,0,0,.3)"/></linearGradient></defs>
 <ellipse cx="90" cy="252" rx="66" ry="6" fill="rgba(0,0,0,.22)"/>
@@ -618,7 +703,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
 <image href="assets/logo-green.png" x="38" y="66" width="104" height="82"/>
 <text x="90" y="180" text-anchor="middle" font-family="Fraunces, serif" font-weight="800" font-size="15" fill="#0A3F1E">Elaichi Chai</text>
 <rect x="60" y="192" width="60" height="3" rx="1.5" fill="#C0262D"/>
-</svg></div><div class="txt"><b>Sachets</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Elaichi%20Chai%20%E2%80%93%20sachets.%20Please%20share%20the%20price%20and%20availability." data-wa="elaichi" data-f="sachet" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div></div></div>
+</svg></div><div class="txt"><b>Sachets</b><small>Ask about availability</small><a class="btn btn-wa btn-sm" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Elaichi%20Chai%20%E2%80%93%20sachets.%20Please%20share%20the%20price%20and%20availability." data-wa="elaichi" data-f="sachet" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></div></div></div>
     <p class="fmt-note">Jar and sachet designs are previews. Other pack sizes &amp; formats on enquiry.</p>
   </div>
 </section>
@@ -681,7 +766,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
       <ul class="contact-list reveal d3">
         <li><svg><use href="#i-pin"/></svg><span><b>Manufactured &amp; packed by</b>Star Tea Co., Nabin Jote, Nimai, Siliguri, Patharghata, Matigara, Dist. Darjeeling, West Bengal, PIN 734010</span></li>
         <li><svg><use href="#i-mail"/></svg><span><b>Customer care</b><a href="mailto:shiwanitea@gmail.com?subject=Shiwani%20Tea%20enquiry">shiwanitea@gmail.com</a></span></li>
-        <li><svg><use href="#i-wa"/></svg><span><b>WhatsApp</b><a href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener">Start a chat</a></span></li>
+        <li><svg><use href="#i-phone"/></svg><span><b>Call or WhatsApp</b><a href="tel:+919800864895">+91 98008 64895</a><span class="cl-actions"><a class="mini" href="tel:+919800864895"><svg><use href="#i-phone"/></svg>Call</a><a class="mini wa" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a></span></span></li>
       </ul>
     </div>
     <form class="form reveal d1" id="enqForm" novalidate>
@@ -711,7 +796,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
         <label>City / area <input id="fCity" type="text" autocomplete="address-level2" placeholder="Optional"></label>
       </div>
       <div class="preview" id="fPreview" aria-live="polite"></div>
-      <a class="btn btn-wa" id="fSend" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Send enquiry on WhatsApp</a>
+      <a class="btn btn-wa" id="fSend" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20enquire%20about%20Shiwani%20Tea%20Gold%20%E2%80%93%201Kg%20pouch.%20Please%20share%20the%20price%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Send enquiry on WhatsApp</a>
     </form>
   </div>
 </section>
@@ -723,7 +808,8 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
       <img class="logo" src="assets/logo-white.png" alt="Shiwani Tea" width="170" height="133" loading="lazy">
       <nav aria-label="Footer"><a href="#gold">Gold</a><a href="#premium">Premium</a><a href="#elaichi">Elaichi Chai</a><a href="#formats">Formats</a><a href="#brew">Brew</a><a href="#enquire">Enquire</a></nav>
     </div>
-    <p class="fine">Shiwani Tea · Manufactured &amp; packed by Star Tea Co., Siliguri, Dist. Darjeeling, West Bengal 734010 · <a href="mailto:shiwanitea@gmail.com">shiwanitea@gmail.com</a></p>
+    <p class="fine">Shiwani Tea · Manufactured &amp; packed by Star Tea Co., Siliguri, Dist. Darjeeling, West Bengal 734010</p>
+    <p class="foot-contact"><a href="tel:+919800864895"><svg><use href="#i-phone"/></svg>+91 98008 64895</a><a href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a><a href="mailto:shiwanitea@gmail.com"><svg><use href="#i-mail"/></svg>shiwanitea@gmail.com</a></p>
     <p class="fine">Pack images are renderings of Shiwani Tea packaging. Jar and sachet designs are previews. Prices on enquiry.</p>
     <details>
       <summary>Photo credits</summary>
@@ -734,11 +820,11 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
     <p class="fine">© <span id="yr">2026</span> Shiwani Tea</p>
   </div>
 </footer>
-<a class="fab" id="fab" href="https://wa.me/?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener" aria-label="Enquire on WhatsApp"><svg><use href="#i-wa"/></svg><span>Enquire</span></a>
+<a class="fab" id="fab" href="https://wa.me/919800864895?text=Hello%20Shiwani%20Tea%21%20I%27d%20like%20to%20know%20more%20about%20your%20teas.%20Please%20share%20prices%20and%20availability." data-wa="any" target="_blank" rel="noopener" aria-label="Enquire on WhatsApp"><svg><use href="#i-wa"/></svg><span>Enquire</span></a>
 
 <script>
 /* ===== CONFIG: put the WhatsApp number here, digits only with country code, e.g. '919800000000' ===== */
-const WHATSAPP_NUMBER = '';
+const WHATSAPP_NUMBER = '919800864895';
 /* ================================================================================================ */
 (function(){
   const NAMES={gold:'Shiwani Tea Gold',premium:'Shiwani Tea Premium',elaichi:'Shiwani Tea Elaichi Chai',all:'all Shiwani Tea blends'};
@@ -768,8 +854,21 @@ const WHATSAPP_NUMBER = '';
   // reveal
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const rv=document.querySelectorAll('.reveal');
-  if(reduce||!('IntersectionObserver' in window)) rv.forEach(e=>e.classList.add('in'));
-  else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});rv.forEach(e=>io.observe(e))}
+  function startReveals(){
+    if(reduce||!('IntersectionObserver' in window)) rv.forEach(e=>e.classList.add('in'));
+    else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});rv.forEach(e=>io.observe(e))}
+  }
+  // preloader: min ~1.2s, hides on window load, hard max 4s
+  const pre=document.getElementById('preloader');
+  if(!pre){startReveals()}else{
+    const MIN=reduce?300:1200, MAX=4000, t0=window.__plStart||Date.now(); let gone=false;
+    const hide=()=>{if(gone)return;gone=true;pre.classList.add('done');pre.setAttribute('aria-busy','false');
+      const sr=pre.querySelector('.sr-only');if(sr)sr.textContent='Shiwani Tea is ready';
+      setTimeout(startReveals,reduce?0:250);setTimeout(()=>pre.remove(),reduce?200:700)};
+    const later=()=>setTimeout(hide,Math.max(0,MIN-(Date.now()-t0)));
+    if(document.readyState==='complete')later();else addEventListener('load',later);
+    setTimeout(hide,Math.max(0,MAX-(Date.now()-t0)));
+  }
   // switcher
   const sw=$('switch'),hero=document.querySelector('.hero'),links=[...sw.querySelectorAll('a')];
   const secs=[...document.querySelectorAll('section.prod')];
