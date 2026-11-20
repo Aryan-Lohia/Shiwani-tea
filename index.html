@@ -263,12 +263,9 @@ p{margin:0}
 .brew h2 .script{color:#F2A93B}
 .brew .grid{display:grid;gap:36px;align-items:center}
 @media(min-width:900px){.brew .grid{grid-template-columns:1fr 1.1fr;gap:60px}}
-.cupwrap{position:relative;max-width:440px;margin:0 auto;width:100%}
-.cupwrap img{width:100%;object-position:68% 50%;border-radius:200px 200px 32px 32px;aspect-ratio:4/5;object-fit:cover;box-shadow:0 40px 60px -30px rgba(0,0,0,.7)}
-.steam{position:absolute;left:52%;top:4%;transform:translateX(-50%);width:160px;height:140px;z-index:2}
-.steam path{fill:none;stroke:rgba(255,245,230,.75);stroke-width:5;stroke-linecap:round;stroke-dasharray:60 200;animation:steam 3.6s ease-in-out infinite}
-.steam path:nth-child(2){animation-delay:1.2s}.steam path:nth-child(3){animation-delay:2.4s}
-@keyframes steam{0%{stroke-dashoffset:260;opacity:0}30%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+.cupwrap{position:relative;max-width:420px;margin:0 auto;width:100%}
+.cupwrap img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:28px;box-shadow:0 40px 60px -30px rgba(0,0,0,.7),0 0 0 1px rgba(251,235,203,.14)}
+@media(min-width:900px){.cupwrap{max-width:460px}}
 .brew ol{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px;counter-reset:b}
 .brew ol li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:20px;background:rgba(251,235,203,.07);border:1px solid rgba(251,235,203,.16)}
 .brew ol li::before{counter-increment:b;content:counter(b);flex:none;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-weight:900;background:#F2A93B;color:#2A170D}
@@ -481,7 +478,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
         <li><svg><use href="#i-spark"/></svg>Premium CTC Tea</li>
         <li><svg><use href="#i-leaf"/></svg>Finest tea estates</li>
         <li><svg><use href="#i-blend"/></svg>Premium blend</li>
-        <li><svg><use href="#i-pack"/></svg>1Kg pack</li>
+        <li><svg><use href="#i-pin"/></svg>Packed in Siliguri</li>
       </ul>
       <div class="meta reveal d3"><span class="pill">1Kg pouch</span><span>Product of India</span><span>100% Veg</span></div>
       <div class="cta reveal d3">
@@ -705,8 +702,7 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
 <section class="brew" id="brew" aria-labelledby="h-brew">
   <div class="wrap grid">
     <div class="cupwrap reveal">
-      <svg class="steam" viewBox="0 0 160 140" aria-hidden="true"><path d="M50 140c-14-20 14-34 0-56s12-36 0-60"/><path d="M80 140c-14-20 14-34 0-56s12-36 0-60"/><path d="M110 140c-14-20 14-34 0-56s12-36 0-60"/></svg>
-      <img src="assets/kulhad-hero.webp" alt="Milk chai in a clay kulhad" loading="lazy" width="1280" height="960">
+      <img src="assets/brew-chai.webp" alt="Hot chai poured through a strainer into a clay kulhad, with a Shiwani Tea Gold pouch, ginger and cardamom on a wooden table" loading="lazy" width="864" height="1152">
     </div>
     <div>
       <span class="eyebrow reveal" style="color:#F2A93B">How to brew</span>
@@ -792,7 +788,6 @@ footer .fine{margin-top:16px;font-size:12.5px;opacity:.7}
     <details>
       <summary>Photo credits</summary>
       <ul>
-        <li>Chai in a kulhad (brew section): “Tea served in Kulhar in India” by Ravi Dwivedi, <a href="https://commons.wikimedia.org/wiki/File:Tea_served_in_Kulhar_in_India.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank">CC BY-SA 4.0</a></li>
         <li>Darjeeling tea plantations (story section): “Darjeeling, India, Tea plantations on hills” by Vyacheslav Argenberg, <a href="https://commons.wikimedia.org/wiki/File:Darjeeling,_India,_Tea_plantations_on_hills.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a></li>
         <li>Assam tea garden (Assam section): “Assam tea garden view” by Diganta Talukdar, <a href="https://commons.wikimedia.org/wiki/File:Assam_tea_garden_view.jpeg" rel="noopener" target="_blank">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank">CC BY-SA 4.0</a></li>
       </ul>
